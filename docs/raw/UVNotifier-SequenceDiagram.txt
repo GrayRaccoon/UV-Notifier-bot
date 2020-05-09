@@ -1,0 +1,41 @@
+title UV Notifier - Sequence Diagram
+
+participant ProcessScheduledTask
+participant FetchDataService
+participant Database
+participant OpenUVApiClient
+participant OpenUVApi
+participant MessageQueue
+participant TwitterPublisher
+participant AnotherPublisher
+participant TwitterSystem
+
+ProcessScheduledTask->FetchDataService:Triggers Fetch data process
+
+note over ProcessScheduledTask,FetchDataService:Scheduled Task starts every morning.
+
+FetchDataService->Database:Fetches supported locations
+FetchDataService<--Database:Returns all supported locations
+
+FetchDataService->OpenUVApiClient:Requests uv data for all the supported locations.
+
+OpenUVApiClient-->OpenUVApi:Consumes API **for each** of the supported locations
+
+OpenUVApiClient<-OpenUVApiClient:Aggregates all the responses
+
+FetchDataService<--OpenUVApiClient: Gets UV data for all supported locations.
+
+FetchDataService->MessageQueue:Publishes a UV data event **for each** of the supported locations.
+
+MessageQueue->(3) TwitterPublisher:Consumes uv level event.
+
+MessageQueue->(2) AnotherPublisher: Consumes UV level event and does something with it.
+
+TwitterPublisher->TwitterSystem: Publishes a tweet about given event.
+
+
+
+
+
+
+

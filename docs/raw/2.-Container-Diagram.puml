@@ -1,0 +1,29 @@
+@startuml UVNotifier-ContainerDiagram
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/release/1-0/C4_Context.puml
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/release/1-0/C4_Container.puml
+
+LAYOUT_TOP_DOWN
+
+title UV Notifier - Container Diagram
+
+Person(twitterUser, "Twitter User", "Any person interested on getting UV levels notifications.")
+
+System_Boundary(uvNotifierSystem, "UV Notifier System") {
+    Container(backendContainer, "Backend Application", "Java, Spring Cloud", "Orchestrates the application data flow.")
+    Container(databaseContainer, "Database", "PostgreSQL", "Stores Supported Locations data.")
+    Container(queueContainer, "Message Queue", "RabbitMQ", "System Message Queue where to publish system events.")   
+}
+
+System_Ext(twitterSystem, "Twitter System", "The public Twitter System.")
+System_Ext(openUVSystem, "OpenUV API System", "UV Levels Provider System.")
+
+Rel(twitterUser, twitterSystem, "Gets UV levels", "via UV Notifier Twitter Account")
+Rel(backendContainer, openUVSystem, "Fetches UV Levels", "via API calls")
+Rel(backendContainer, twitterSystem, "Publishes UV levels notifications", "via Twitter API")
+
+Rel(backendContainer, databaseContainer, "Reads from and writes to", "JDBC")
+Rel(backendContainer, queueContainer, "Receives from and publishes to", "Spring Cloud Stream")
+
+
+
+@enduml

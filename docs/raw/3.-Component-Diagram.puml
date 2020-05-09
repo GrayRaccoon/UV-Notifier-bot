@@ -1,0 +1,44 @@
+@startuml UVNotifier-ComponentDiagram
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/release/1-0/C4_Container.puml
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/release/1-0/C4_Component.puml
+
+LAYOUT_LEFT_RIGHT
+
+title UV Notifier - Component Diagram
+
+Container(databaseContainer, "Database", "PostgreSQL", "Stores Supported Locations data.")
+Container(queueContainer, "Message Queue", "RabbitMQ", "System Message Queue where to publish system events.")
+
+Container_Boundary(backendContainer, "Backend Application") {
+    Component(processScheduledTaskComponent, "Process Scheduled Task", "Spring Service, CRON", "Triggers the fetch data process.")
+
+    Component(fetchDataService, "Fetch Data Service", "Spring Service", "Fetches UV levels data for each supported location")
+
+    Component(openUVApiClient, "OpenUV API Client", "Spring Service", "Consumes OpenUV API System Data")
+    
+    Component(twitterPublisher, "Twitter Publisher", "Spring Service", "Publishes Notifications to Twitter System")
+    Component(otherPublisher, "Other Publishers", "Spring Service", "Not implemented.")    
+}
+
+System_Ext(twitterSystem, "Twitter System", "The public Twitter System.")
+System_Ext(openUVSystem, "OpenUV API System", "UV Levels Provider System.")
+
+
+Person(twitterUser, "Twitter User", "Any person interested on getting UV levels notifications.")
+
+
+Rel(twitterUser, twitterSystem, "Gets UV levels", "via UV Notifier Twitter Account")
+
+Rel(fetchDataService, databaseContainer, "reads data from", "JDBC")
+Rel(fetchDataService, queueContainer, "publishes events to", "Spring Cloud Stream")
+
+Rel(processScheduledTaskComponent, fetchDataService, "Invokes")
+Rel(fetchDataService, openUVApiClient, "uses")
+
+Rel(openUVApiClient, openUVSystem, "Fetches UV Levels", "via API calls")
+Rel(twitterPublisher, twitterSystem, "Publishes notifications about UV Levels", "via Twitter API")
+
+Rel(queueContainer, twitterPublisher, "receives events from", "Spring Cloud Stream")
+Rel(queueContainer, otherPublisher, "receives events from", "Spring Cloud Stream")
+
+@enduml

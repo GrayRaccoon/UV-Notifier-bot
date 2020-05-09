@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="316px" preserveAspectRatio="none" style="width:636px;height:316px;" version="1.1" viewBox="0 0 636 316" width="636px" zoomAndPan="magnify"><defs/><g><text fill="#000000" font-family="sans-serif" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="333" x="155" y="17.4023">UV Notifier - System Context Diagram</text><!--entity twitterUser--><rect fill="#08427B" height="118.9297" style="stroke: #073B6F; stroke-width: 1.5;" width="197" x="11" y="29.6992"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="52" x="83.5" y="51.3008">«person»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="100" x="59.5" y="69.3008">Twitter User</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="0" x="111.5" y="86.2109"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="173" x="21" y="102.6992">Any person interested on</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="114" x="50.5" y="119.1875">getting UV levels</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="89" x="65" y="135.6758">notifications.</text><!--entity uvNotifierSystem--><rect fill="#1168BD" height="102.4414" style="stroke: #3C7FC0; stroke-width: 1.5;" width="207" x="6" y="197.1992"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="52" x="83.5" y="218.8008">«system»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="152" x="33.5" y="236.8008">UV Notifier System</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="0" x="111.5" y="253.7109"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="183" x="16" y="270.1992">Application to notify about</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="124" x="47.5" y="286.6875">UV levels to users.</text><!--entity twitterSystem--><rect fill="#999999" height="85.9531" style="stroke: #8A8A8A; stroke-width: 1.5;" width="200" x="424.5" y="72.1992"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="105" x="472" y="93.8008">«external_system»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="121" x="464" y="111.8008">Twitter System</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="0" x="526.5" y="128.7109"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="180" x="434.5" y="145.1992">The public Twitter System.</text><!--entity openUVSystem--><rect fill="#999999" height="85.9531" style="stroke: #8A8A8A; stroke-width: 1.5;" width="201" x="424" y="219.1992"/><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="105" x="472" y="240.8008">«external_system»</text><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="162" x="443.5" y="258.8008">OpenUV API System</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="0" x="526.5" y="275.7109"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="181" x="434" y="292.1992">UV Levels Provider System.</text><!--link twitterUser to twitterSystem--><path d="M208.11,95.3492 C271.69,99.3492 354.55,104.5592 419.39,108.6492 " fill="none" id="twitterUser-&gt;twitterSystem" style="stroke: #666666; stroke-width: 1.0;"/><polygon fill="#666666" points="424.41,108.9592,415.6795,104.4009,419.4199,108.6447,415.1762,112.3851,424.41,108.9592" style="stroke: #666666; stroke-width: 1.0;"/><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="96" x="270.5" y="66.7676">Gets UV levels</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="130" x="251.5" y="81.1113">[via UV Notifier Twitter</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="49" x="294" y="95.2441">Account]</text><!--link uvNotifierSystem to openUVSystem--><path d="M213.09,262.6792 C223.18,263.6992 233.28,264.5792 243,265.1992 C309.97,269.4792 326.89,265.9792 394,265.1992 C402.01,265.1092 410.29,264.9792 418.62,264.8392 " fill="none" id="uvNotifierSystem-&gt;openUVSystem" style="stroke: #666666; stroke-width: 1.0;"/><polygon fill="#666666" points="423.82,264.7392,414.7418,260.92,418.821,264.8392,414.9018,268.9184,423.82,264.7392" style="stroke: #666666; stroke-width: 1.0;"/><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="111" x="263" y="247.7676">Reads UV Levels</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="75" x="281" y="262.1113">[via API calls]</text><!--link uvNotifierSystem to twitterSystem--><path d="M213.01,227.7592 C267.55,215.5792 335.29,198.3592 394,177.1992 C407.59,172.2992 421.66,166.4392 435.3,160.3092 " fill="none" id="uvNotifierSystem-&gt;twitterSystem" style="stroke: #666666; stroke-width: 1.0;"/><polygon fill="#666666" points="439.91,158.2192,430.0615,158.302,435.3582,160.2882,433.3719,165.5849,439.91,158.2192" style="stroke: #666666; stroke-width: 1.0;"/><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="65" x="284" y="128.7676">Publishes</text><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="149" x="244" y="144.0781">notifications about UV</text><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="43" x="297" y="159.3887">Levels</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="90" x="273.5" y="173.7324">[via Twitter API]</text><!--
+@startuml UVNotifier-SystemContextDiagram
+
+
+
+
+
+skinparam defaultTextAlignment center
+
+skinparam wrapWidth 200
+skinparam maxMessageSize 150
+
+skinparam rectangle {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam database {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam Arrow {
+    Color #666666
+    FontColor #666666
+    FontSize 12
+}
+
+skinparam rectangle<<boundary>> {
+    Shadowing false
+    StereotypeFontSize 0
+    FontColor #444444
+    BorderColor #444444
+    BorderStyle dashed
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam rectangle<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+
+skinparam rectangle<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+
+skinparam rectangle<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+
+skinparam rectangle<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+
+skinparam database<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+
+skinparam database<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+
+
+
+
+
+
+
+
+
+
+
+
+left to right direction
+
+title UV Notifier - System Context Diagram
+
+rectangle "==Twitter User\n\n Any person interested on getting UV levels notifications." <<person>> as twitterUser
+
+rectangle "==UV Notifier System\n\n Application to notify about UV levels to users." <<system>> as uvNotifierSystem
+
+rectangle "==Twitter System\n\n The public Twitter System." <<external_system>> as twitterSystem
+rectangle "==OpenUV API System\n\n UV Levels Provider System." <<external_system>> as openUVSystem
+
+twitterUser - -> twitterSystem : "===Gets UV levels\n//<size:12>[via UV Notifier Twitter Account]</size>//"
+uvNotifierSystem - -> openUVSystem : "===Reads UV Levels\n//<size:12>[via API calls]</size>//"
+uvNotifierSystem - -> twitterSystem : "===Publishes notifications about UV Levels\n//<size:12>[via Twitter API]</size>//"
+
+@enduml
+
+PlantUML version 1.2019.09(Mon Aug 26 11:19:51 CDT 2019)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_202-b08
+Operating System: Mac OS X
+OS Version: 10.15.4
+Default Encoding: UTF-8
+Language: es
+Country: MX
+--></g></svg>

@@ -1,0 +1,19 @@
+@startuml UVNotifier-SystemContextDiagram
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/release/1-0/C4_Context.puml
+
+LAYOUT_LEFT_RIGHT
+
+title UV Notifier - System Context Diagram
+
+Person(twitterUser, "Twitter User", "Any person interested on getting UV levels notifications.")
+
+System(uvNotifierSystem, "UV Notifier System", "Application to notify about UV levels to users.")
+
+System_Ext(twitterSystem, "Twitter System", "The public Twitter System.")
+System_Ext(openUVSystem, "OpenUV API System", "UV Levels Provider System.")
+
+Rel(twitterUser, twitterSystem, "Gets UV levels", "via UV Notifier Twitter Account")
+Rel(uvNotifierSystem, openUVSystem, "Reads UV Levels", "via API calls")
+Rel(uvNotifierSystem, twitterSystem, "Publishes notifications about UV Levels", "via Twitter API")
+
+@enduml
