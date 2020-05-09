@@ -11,7 +11,7 @@ Person(twitterUser, "Twitter User", "Any person interested on getting UV levels 
 System_Boundary(uvNotifierSystem, "UV Notifier System") {
     Container(backendContainer, "Backend Application", "Java, Spring Cloud", "Orchestrates the application data flow.")
     Container(databaseContainer, "Database", "PostgreSQL", "Stores Supported Locations data.")
-    Container(queueContainer, "Message Queue", "RabbitMQ", "System Message Queue where to publish system events.")   
+    Container(queueContainer, "Message Broker", "RabbitMQ", "System Message Broker where to publish system events.")   
 }
 
 System_Ext(twitterSystem, "Twitter System", "The public Twitter System.")

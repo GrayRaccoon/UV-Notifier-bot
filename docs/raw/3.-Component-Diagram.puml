@@ -7,7 +7,7 @@ LAYOUT_LEFT_RIGHT
 title UV Notifier - Component Diagram
 
 Container(databaseContainer, "Database", "PostgreSQL", "Stores Supported Locations data.")
-Container(queueContainer, "Message Queue", "RabbitMQ", "System Message Queue where to publish system events.")
+Container(queueContainer, "Message Broker", "RabbitMQ", "System Message Broker where to publish system events.")
 
 Container_Boundary(backendContainer, "Backend Application") {
     Component(processScheduledTaskComponent, "Process Scheduled Task", "Spring Service, CRON", "Triggers the fetch data process.")
