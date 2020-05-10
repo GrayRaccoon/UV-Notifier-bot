@@ -48,10 +48,19 @@ This project aims to consume data provided by OpenUV,
 and use this data to send periodic notifications to a given user 
 in a daily basis and/or near-real time fashion.
 The system is designed to be cloud based and 
-its notifications may contain information considered as relevant for the end users.  
+its notifications may contain information considered as relevant for the end users. 
 
 As OpenUV is a private paid service there is no need of including 
 source attribution(s) in the notifications messages.
+
+TODO: Refine abstract once full high level design is done.
+
+
+## Usage Overview
+A user subscribes to the system events 
+by starting following an online account (Twitter/Facebook) 
+so that, every morning user can receive updates 
+about UV levels in all supported locations in his or her daily feed news.
 
 
 ## Goal/Objectives
@@ -84,6 +93,8 @@ Additionally, this project targets the open-source software development communit
 ## Limitations & Unknowns
 - Twitter needs to approve a development account. ETA is not known.
 - How does Twitter detect Spam. Should there be any considerations?
+- At this phase a user will see all the updates even the ones 
+    from the supported locations that might not be relevant for him or her.
 
 
 ## Supported use-cases
